@@ -1,0 +1,31 @@
+[Unit]
+Description=Telegram Agent - Droid + GLM-4.7 + NOVA
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/Telegram-Agent
+
+# Environment file
+EnvironmentFile=/root/Telegram-Agent/.env
+
+# Environment variables for Droid CLI
+Environment=NODE_ENV=production
+Environment=HOME=/root
+Environment=PATH=/root/.local/bin:/usr/local/bin:/usr/bin:/bin
+
+# Start the application
+ExecStart=/usr/bin/node /root/Telegram-Agent/dist/index.js
+
+# Restart policy
+Restart=always
+RestartSec=10
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=telegram-agent
+
+[Install]
+WantedBy=multi-user.target

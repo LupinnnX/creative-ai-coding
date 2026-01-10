@@ -1,0 +1,87 @@
+# Droid MCP Server Configuration
+# Copy this to ~/.droid/config.toml or ~/.codex/config.toml on your VPS
+#
+# NOVA Framework v6.0 - Full MCP Configuration
+# Date: December 31, 2025
+#
+# SETUP INSTRUCTIONS:
+# 1. Get Brave API Key: https://brave.com/search/api/ (free tier available)
+# 2. Export your key: export BRAVE_API_KEY="your-key-here"
+# 3. Run: bash ./scripts/setup-droid-mcp.sh
+# 4. Restart Telegram agent
+
+# ============================================================================
+# SEQUENTIAL THINKING - Complex reasoning & Antigravity Loop v2.0
+# ============================================================================
+# Tools: sequentialthinking
+# No API key required
+[mcp_servers.sequential-thinking]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+startup_timeout_ms = 30_000
+
+# ============================================================================
+# BRAVE SEARCH - Web research for VEGA agent
+# ============================================================================
+# Tools: brave_web_search, brave_local_search
+# Requires: BRAVE_API_KEY (get free at https://brave.com/search/api/)
+[mcp_servers.brave-search]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-brave-search"]
+startup_timeout_ms = 30_000
+
+[mcp_servers.brave-search.env]
+BRAVE_API_KEY = "${BRAVE_API_KEY}"
+
+# ============================================================================
+# MEMORY - Persistent knowledge graph for agent memory
+# ============================================================================
+# Tools: create_entities, create_relations, search_nodes, read_graph, etc.
+# No API key required - stores in local file
+[mcp_servers.memory]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-memory"]
+startup_timeout_ms = 15_000
+
+# ============================================================================
+# FETCH - HTTP requests and web content fetching
+# ============================================================================
+# Tools: fetch
+# No API key required
+[mcp_servers.fetch]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-fetch"]
+startup_timeout_ms = 15_000
+
+# ============================================================================
+# FILESYSTEM - File operations (if Droid's built-in tools aren't enough)
+# ============================================================================
+# Tools: read_file, write_file, list_directory, etc.
+# No API key required
+[mcp_servers.filesystem]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-filesystem", "/workspace"]
+startup_timeout_ms = 10_000
+
+# ============================================================================
+# GITHUB - GitHub API integration
+# ============================================================================
+# Tools: search_repositories, get_file_contents, create_issue, etc.
+# Requires: GITHUB_TOKEN
+# [mcp_servers.github]
+# command = "npx"
+# args = ["-y", "@modelcontextprotocol/server-github"]
+# startup_timeout_ms = 30_000
+# 
+# [mcp_servers.github.env]
+# GITHUB_PERSONAL_ACCESS_TOKEN = "${GITHUB_TOKEN}"
+
+# ============================================================================
+# POSTGRES - Database operations (if you have a Postgres DB)
+# ============================================================================
+# Tools: query, list_tables, describe_table
+# Requires: DATABASE_URL
+# [mcp_servers.postgres]
+# command = "npx"
+# args = ["-y", "@modelcontextprotocol/server-postgres", "${DATABASE_URL}"]
+# startup_timeout_ms = 15_000

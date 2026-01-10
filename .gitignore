@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+*.egg-info/
+
+# Node.js
+node_modules/
+dist/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ESLint cache
+.eslintcache
+
+# Environment files
+.env
+.env.local
+.env.*
+!.env.example
+
+# Secrets
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Coverage
+coverage/
+
+# Caddy configuration (keep Caddyfile.example)
+Caddyfile
+
+# Session files
+sessions/
+api_sessions/
+
+# Local workspace
+workspace/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local development tools
+.kiro/
+.claude/
+.cursor/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Integration testing
+.test-repo-name
+.test-repo-url
+.test-issue-number

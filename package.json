@@ -1,0 +1,56 @@
+{
+  "name": "creative-ai-driven-coding",
+  "version": "2.0.0",
+  "description": "Creative AI-Driven Coding Development - Control Droid AI assistant from Telegram and GitHub with GLM Coding Plan support",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "setup-auth": "node dist/scripts/setup-auth.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint . --cache",
+    "lint:fix": "eslint . --cache --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "keywords": [
+    "ai",
+    "coding-assistant",
+    "telegram",
+    "github",
+    "droid",
+    "factory",
+    "glm",
+    "glm-4.7"
+  ],
+  "author": "LupinnnX (https://github.com/LupinnnX)",
+  "license": "MIT AND CC-BY-NC-SA-4.0",
+  "dependencies": {
+    "@octokit/rest": "^22.0.0",
+    "dotenv": "^16.4.0",
+    "express": "^4.18.0",
+    "pg": "^8.11.0",
+    "telegraf": "^4.16.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/express": "^4.17.0",
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.0.0",
+    "@types/pg": "^8.11.0",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "10.1.8",
+    "jest": "^29.7.0",
+    "prettier": "3.6.2",
+    "ts-jest": "^29.1.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0",
+    "typescript-eslint": "^8.46.4"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

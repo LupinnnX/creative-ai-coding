@@ -1,0 +1,54 @@
+[Unit]
+Description=Creative AI-Driven Coding Development - Droid + GLM-4.7 + Telegram + NOVA
+Documentation=https://github.com/LupinnnX/creative-ai-driven-coding
+After=network.target postgresql.service
+Wants=postgresql.service
+
+[Service]
+Type=simple
+User=appuser
+Group=appuser
+WorkingDirectory=/opt/remote-agent
+
+# Environment file with secrets
+EnvironmentFile=/opt/remote-agent/.env
+
+# IMPORTANT: Set HOME for Droid CLI to find ~/.factory/config.json
+Environment=HOME=/home/appuser
+Environment=NODE_ENV=production
+Environment=PATH=/usr/local/bin:/usr/bin:/bin:/home/appuser/.local/bin
+
+# Node.js application
+ExecStart=/usr/bin/node /opt/remote-agent/dist/index.js
+
+# Watchdog configuration - auto-restart if app becomes unresponsive
+WatchdogSec=120
+WatchdogSignal=SIGABRT
+
+# Restart policy - comprehensive auto-recovery
+Restart=always
+RestartSec=10
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+# Timeout for graceful shutdown
+TimeoutStopSec=30
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=remote-agent
+
+# Security hardening (ProtectHome=false to allow Droid CLI config access)
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=false
+PrivateTmp=true
+ReadWritePaths=/opt/remote-agent/workspace /opt/remote-agent/logs /home/appuser/.factory
+
+# Resource limits
+MemoryMax=2G
+CPUQuota=80%
+
+[Install]
+WantedBy=multi-user.target

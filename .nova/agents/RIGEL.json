@@ -1,0 +1,16 @@
+{
+  "agent": "RIGEL",
+  "id": "Ξ34085",
+  "role": "Frontend Lead",
+  "status": "IDLE",
+  "strength": 0.95,
+  "keywords": ["component", "TypeScript", "React", "state", "architecture"],
+  "current_task": null,
+  "files_locked": [],
+  "files_modified": [],
+  "blocked_by": null,
+  "waiting_for": null,
+  "parallel_slot": null,
+  "last_update": null,
+  "notes": null
+}

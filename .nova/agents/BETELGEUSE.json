@@ -1,0 +1,16 @@
+{
+  "agent": "BETELGEUSE",
+  "id": "Ξ39801",
+  "role": "Frontend Dev",
+  "status": "IDLE",
+  "strength": 0.7,
+  "keywords": ["animation", "interaction", "transition", "polish", "60fps"],
+  "current_task": null,
+  "files_locked": [],
+  "files_modified": [],
+  "blocked_by": null,
+  "waiting_for": null,
+  "parallel_slot": null,
+  "last_update": null,
+  "notes": null
+}
