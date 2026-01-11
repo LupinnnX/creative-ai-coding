@@ -56,12 +56,23 @@ workspace/
 .kiro/
 .claude/
 .cursor/
-.nova/
+nova-framework/
 
-# Internal development artifacts
-.agents/plans/
-.agents/reference/
-.agents/PRD.md
+# NOVA internal files (keep steering public)
+.nova/agents/
+.nova/research/
+.nova/mission.json
+.nova/DASHBOARD.md
+.nova/steering/NOVA_COGNITIVE_ARCHITECTURE.md
+.nova/steering/NOVA_PARALLEL.md
+.nova/steering/NOVA_STORAGE.md
+.nova/steering/NOVA_SELF_IMPROVEMENT.md
+.nova/steering/NOVA_MEMORY*.md
+.nova/steering/NOVA_CONTEXT_ENGINE.md
+.nova/steering/NOVA_v7_ROADMAP.md
+
+# Internal development artifacts (not for public)
+.agents/
 
 # OS
 .DS_Store
