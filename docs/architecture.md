@@ -1,6 +1,6 @@
 # Architecture Guide
 
-Comprehensive guide to understanding and extending the Remote Coding Agent platform.
+Comprehensive guide to understanding and extending the Creative AI Coding platform.
 
 **Navigation:** [Overview](#system-overview) • [Adding Platforms](#adding-platform-adapters) • [Adding AI Assistants](#adding-ai-assistant-clients) • [Commands](#command-system) • [Streaming](#streaming-modes) • [Database](#database-schema)
 
@@ -8,7 +8,7 @@ Comprehensive guide to understanding and extending the Remote Coding Agent platf
 
 ## System Overview
 
-The Remote Coding Agent is a **platform-agnostic AI coding assistant orchestrator** that connects messaging platforms (Telegram, GitHub, Slack) to AI coding assistants (Claude Code, Codex) via a unified interface.
+The Creative AI Coding platform is a **platform-agnostic AI coding assistant orchestrator** that connects messaging platforms (Telegram, GitHub, Slack) to AI coding assistants (Claude Code, Codex) via a unified interface.
 
 ### Core Architecture
 
@@ -896,7 +896,7 @@ Save session ID for next message
 ### GitHub Webhook Flow
 
 ```
-User comments: @remote-agent /command-invoke prime
+User comments: @ai-coder /command-invoke prime
          ↓
 GitHub sends webhook to POST /webhooks/github
          ↓
@@ -904,13 +904,13 @@ GitHubAdapter.handleWebhook(payload, signature)
   - Verify HMAC signature
   - Parse event: issue_comment.created
   - Extract: owner/repo#42, comment text
-  - Check for @remote-agent mention
+  - Check for @ai-coder mention
          ↓
 First mention on this issue?
   - Yes → Clone repo, create codebase, load commands
   - No → Use existing codebase
          ↓
-Strip @remote-agent from comment
+Strip @ai-coder from comment
          ↓
 Orchestrator.handleMessage(adapter, "user/repo#42", "/command-invoke prime")
          ↓

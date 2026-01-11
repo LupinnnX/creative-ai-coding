@@ -26,8 +26,8 @@ fi
 
 # Variables
 APP_USER="appuser"
-APP_DIR="/opt/remote-agent"
-WORKSPACE_DIR="/opt/remote-agent/workspace"
+APP_DIR="/opt/creative-ai-coding"
+WORKSPACE_DIR="/opt/creative-ai-coding/workspace"
 
 # =============================================================================
 # Step 1: System Dependencies
@@ -189,7 +189,7 @@ DROID_BIN=/home/appuser/.local/bin/droid
 
 # Server
 PORT=3000
-WORKSPACE_PATH=/opt/remote-agent/workspace
+WORKSPACE_PATH=/opt/creative-ai-coding/workspace
 MAX_CONCURRENT_CONVERSATIONS=10
 EOF
   chown "$APP_USER:$APP_USER" "$APP_DIR/.env"
@@ -204,9 +204,9 @@ fi
 # =============================================================================
 echo ""
 echo -e "${CYAN}Step 10: Installing systemd service...${NC}"
-cp "$APP_DIR/remote-agent.service" /etc/systemd/system/
+cp "$APP_DIR/telegram-agent.service" /etc/systemd/system/
 systemctl daemon-reload
-systemctl enable remote-agent
+systemctl enable telegram-agent
 
 # =============================================================================
 # Step 10: Setup Keep-Alive System
@@ -254,11 +254,11 @@ echo -e "4. ${CYAN}Change database password:${NC}"
 echo -e "   Update password in .env and PostgreSQL"
 echo ""
 echo -e "5. ${CYAN}Start the service:${NC}"
-echo -e "   sudo systemctl start remote-agent"
+echo -e "   sudo systemctl start telegram-agent"
 echo ""
 echo -e "6. ${CYAN}Check status:${NC}"
-echo -e "   sudo systemctl status remote-agent"
-echo -e "   sudo journalctl -u remote-agent -f"
+echo -e "   sudo systemctl status telegram-agent"
+echo -e "   sudo journalctl -u telegram-agent -f"
 echo ""
 echo -e "${GREEN}Droid CLI: /home/$APP_USER/.local/bin/droid${NC}"
 echo -e "${GREEN}GLM Config: /home/$APP_USER/.factory/config.json${NC}"

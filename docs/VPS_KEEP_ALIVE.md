@@ -15,7 +15,7 @@ Multi-layer protection system to prevent VPS inactivity shutdown.
 │  ├── Activity logging (proves app is alive)                  │
 │  └── Optional external URL pings (network activity)          │
 │                                                              │
-│  LAYER 2: Systemd Watchdog (remote-agent.service)           │
+│  LAYER 2: Systemd Watchdog (telegram-agent.service)         │
 │  ├── WatchdogSec=120 (2 minute timeout)                     │
 │  ├── Auto-restart on watchdog timeout                        │
 │  └── WATCHDOG=1 notifications from app                       │
@@ -41,7 +41,7 @@ Multi-layer protection system to prevent VPS inactivity shutdown.
 sudo ./scripts/setup-keep-alive.sh
 
 # Restart the service to apply changes
-sudo systemctl restart remote-agent
+sudo systemctl restart telegram-agent
 
 # Verify it's working
 curl http://localhost:3000/health/keepalive
@@ -117,13 +117,13 @@ Returns detailed keep-alive system status:
 
 ```bash
 # Real-time logs
-journalctl -u remote-agent -f
+journalctl -u telegram-agent -f
 
 # Last 100 lines
-journalctl -u remote-agent -n 100
+journalctl -u telegram-agent -n 100
 
 # Filter for keep-alive messages
-journalctl -u remote-agent | grep KeepAlive
+journalctl -u telegram-agent | grep KeepAlive
 ```
 
 ### View Watchdog Logs
@@ -140,10 +140,10 @@ tail -50 /var/log/vps-watchdog.log
 
 ```bash
 # Service status
-systemctl status remote-agent
+systemctl status telegram-agent
 
 # Restart count
-systemctl show remote-agent --property=NRestarts
+systemctl show telegram-agent --property=NRestarts
 ```
 
 ## Troubleshooting
@@ -152,7 +152,7 @@ systemctl show remote-agent --property=NRestarts
 
 1. Check application logs for errors:
    ```bash
-   journalctl -u remote-agent -n 200 --no-pager
+   journalctl -u telegram-agent -n 200 --no-pager
    ```
 
 2. Check if database is accessible:
@@ -162,19 +162,19 @@ systemctl show remote-agent --property=NRestarts
 
 3. Verify environment variables:
    ```bash
-   cat /opt/remote-agent/.env | grep -v "^#"
+   cat /opt/creative-ai-coding/.env | grep -v "^#"
    ```
 
 ### Watchdog Not Working
 
 1. Verify systemd service has watchdog configured:
    ```bash
-   systemctl show remote-agent | grep Watchdog
+   systemctl show telegram-agent | grep Watchdog
    ```
 
 2. Check if WATCHDOG_USEC is set:
    ```bash
-   journalctl -u remote-agent | grep WATCHDOG
+   journalctl -u telegram-agent | grep WATCHDOG
    ```
 
 ### External Pings Failing
@@ -195,13 +195,13 @@ systemctl show remote-agent --property=NRestarts
 
 ```bash
 # Stop the service
-sudo systemctl stop remote-agent
+sudo systemctl stop telegram-agent
 
 # Wait 10 seconds, cron watchdog should restart it
 sleep 15
 
 # Check if it's running
-systemctl is-active remote-agent
+systemctl is-active telegram-agent
 ```
 
 ### Test Health Check Failure
@@ -224,7 +224,7 @@ sudo iptables -D INPUT -p tcp --dport 3000 -j DROP
 # The watchdog should restart after WatchdogSec (120s)
 kill -STOP $(pgrep -f "node.*index.js")
 sleep 130
-systemctl status remote-agent
+systemctl status telegram-agent
 ```
 
 ## VPS Provider Notes

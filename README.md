@@ -69,8 +69,8 @@ Every significant output passes through NOVA's cognitive cycle: draft → self-c
 ## Quick Start
 
 ```bash
-git clone https://github.com/LupinnnX/remote-coding-agent.git
-cd remote-coding-agent
+git clone https://github.com/LupinnnX/creative-ai-coding.git
+cd creative-ai-coding
 cp .env.example .env
 ```
 
@@ -178,10 +178,10 @@ docker compose logs -f app-with-db
 
 ```bash
 ssh user@your-vps
-git clone https://github.com/LupinnnX/remote-coding-agent.git
-cd remote-coding-agent
+git clone https://github.com/LupinnnX/creative-ai-coding.git
+cd creative-ai-coding
 sudo bash scripts/vps-setup.sh
-sudo systemctl start remote-agent
+sudo systemctl start telegram-agent
 ```
 
 See [Cloud Deployment Guide](docs/cloud-deployment.md) for detailed instructions.

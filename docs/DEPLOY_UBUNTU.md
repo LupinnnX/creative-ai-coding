@@ -145,19 +145,19 @@ EOF
 
 ```bash
 # Create app directory
-sudo mkdir -p /opt/remote-agent/workspace
-sudo mkdir -p /opt/remote-agent/logs
+sudo mkdir -p /opt/creative-ai-coding/workspace
+sudo mkdir -p /opt/creative-ai-coding/logs
 
 # Clone your code
-cd /opt/remote-agent
-sudo git clone https://github.com/YOUR_USER/remote-agentic-coding-system.git .
+cd /opt/creative-ai-coding
+sudo git clone https://github.com/YOUR_USER/creative-ai-coding.git .
 
 # Set ownership
-sudo chown -R appuser:appuser /opt/remote-agent
+sudo chown -R appuser:appuser /opt/creative-ai-coding
 
 # Install dependencies and build (as appuser)
-sudo su - appuser -c 'cd /opt/remote-agent && npm ci'
-sudo su - appuser -c 'cd /opt/remote-agent && npm run build'
+sudo su - appuser -c 'cd /opt/creative-ai-coding && npm ci'
+sudo su - appuser -c 'cd /opt/creative-ai-coding && npm run build'
 ```
 
 ---
@@ -166,7 +166,7 @@ sudo su - appuser -c 'cd /opt/remote-agent && npm run build'
 
 ```bash
 # Create .env file
-sudo nano /opt/remote-agent/.env
+sudo nano /opt/creative-ai-coding/.env
 ```
 
 Add this configuration:
@@ -193,13 +193,13 @@ DROID_BIN=/home/appuser/.local/bin/droid
 
 # Server
 PORT=3000
-WORKSPACE_PATH=/opt/remote-agent/workspace
+WORKSPACE_PATH=/opt/creative-ai-coding/workspace
 ```
 
 ```bash
 # Secure the file
-sudo chown appuser:appuser /opt/remote-agent/.env
-sudo chmod 600 /opt/remote-agent/.env
+sudo chown appuser:appuser /opt/creative-ai-coding/.env
+sudo chmod 600 /opt/creative-ai-coding/.env
 ```
 
 ---
@@ -208,7 +208,7 @@ sudo chmod 600 /opt/remote-agent/.env
 
 ```bash
 PGPASSWORD=YOUR_SECURE_DB_PASSWORD psql -h localhost -U codinguser -d creative_ai_coding \
-  -f /opt/remote-agent/migrations/001_initial_schema.sql
+  -f /opt/creative-ai-coding/migrations/001_initial_schema.sql
 ```
 
 ---
@@ -219,7 +219,7 @@ The service file needs to allow access to appuser's home for Droid config:
 
 ```bash
 # Edit the service file
-sudo nano /opt/remote-agent/remote-agent.service
+sudo nano /opt/creative-ai-coding/telegram-agent.service
 ```
 
 Update these lines:
@@ -237,9 +237,9 @@ Environment=HOME=/home/appuser
 
 ```bash
 # Copy and enable service
-sudo cp /opt/remote-agent/remote-agent.service /etc/systemd/system/
+sudo cp /opt/creative-ai-coding/telegram-agent.service /etc/systemd/system/
 sudo systemctl daemon-reload
-sudo systemctl enable remote-agent
+sudo systemctl enable telegram-agent
 ```
 
 ---
@@ -248,13 +248,13 @@ sudo systemctl enable remote-agent
 
 ```bash
 # Start
-sudo systemctl start remote-agent
+sudo systemctl start telegram-agent
 
 # Check status
-sudo systemctl status remote-agent
+sudo systemctl status telegram-agent
 
 # View logs
-sudo journalctl -u remote-agent -f
+sudo journalctl -u telegram-agent -f
 ```
 
 ---
@@ -272,18 +272,18 @@ sudo journalctl -u remote-agent -f
 
 ```bash
 # Start/Stop/Restart
-sudo systemctl start remote-agent
-sudo systemctl stop remote-agent
-sudo systemctl restart remote-agent
+sudo systemctl start telegram-agent
+sudo systemctl stop telegram-agent
+sudo systemctl restart telegram-agent
 
 # Status
-sudo systemctl status remote-agent
+sudo systemctl status telegram-agent
 
 # Live logs
-sudo journalctl -u remote-agent -f
+sudo journalctl -u telegram-agent -f
 
 # Logs since today
-sudo journalctl -u remote-agent --since today
+sudo journalctl -u telegram-agent --since today
 ```
 
 ---
@@ -291,11 +291,11 @@ sudo journalctl -u remote-agent --since today
 ## Update Deployment
 
 ```bash
-cd /opt/remote-agent
+cd /opt/creative-ai-coding
 sudo -u appuser git pull
 sudo -u appuser npm ci
 sudo -u appuser npm run build
-sudo systemctl restart remote-agent
+sudo systemctl restart telegram-agent
 ```
 
 ---
@@ -331,18 +331,18 @@ cd ~
 droid
 # Complete browser login
 exit
-sudo systemctl restart remote-agent
+sudo systemctl restart telegram-agent
 ```
 
 ### Service can't read Droid config
 
 ```bash
 # Ensure ProtectHome=false in service file
-sudo nano /etc/systemd/system/remote-agent.service
+sudo nano /etc/systemd/system/telegram-agent.service
 # Set: ProtectHome=false
 # Add: Environment=HOME=/home/appuser
 sudo systemctl daemon-reload
-sudo systemctl restart remote-agent
+sudo systemctl restart telegram-agent
 ```
 
 ---
@@ -351,12 +351,12 @@ sudo systemctl restart remote-agent
 
 | Path | Purpose |
 |------|---------|
-| `/opt/remote-agent/` | Application root |
-| `/opt/remote-agent/.env` | App configuration |
+| `/opt/creative-ai-coding/` | Application root |
+| `/opt/creative-ai-coding/.env` | App configuration |
 | `/home/appuser/.factory/config.json` | GLM-4.7 + Z.AI config |
 | `/home/appuser/.factory/` | Droid CLI auth tokens |
-| `/opt/remote-agent/workspace/` | Cloned repos |
-| `/etc/systemd/system/remote-agent.service` | Service file |
+| `/opt/creative-ai-coding/workspace/` | Cloned repos |
+| `/etc/systemd/system/telegram-agent.service` | Service file |
 
 ---
 
@@ -364,8 +364,8 @@ sudo systemctl restart remote-agent
 
 ```bash
 # Test Droid CLI directly
-sudo su - appuser -c 'cd /opt/remote-agent/workspace && droid exec -o json "Hello, what model are you?"'
+sudo su - appuser -c 'cd /opt/creative-ai-coding/workspace && droid exec -o json "Hello, what model are you?"'
 
 # Check service logs for errors
-sudo journalctl -u remote-agent -n 50 --no-pager
+sudo journalctl -u telegram-agent -n 50 --no-pager
 ```

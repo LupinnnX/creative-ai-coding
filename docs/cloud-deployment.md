@@ -11,7 +11,7 @@ Deploy Creative AI-Driven Coding Development to a cloud VPS for 24/7 operation w
 **Required:**
 
 - Cloud VPS account (DigitalOcean, Linode, AWS EC2, Vultr, etc.)
-- Domain name or subdomain (e.g., `remote-agent.yourdomain.com`)
+- Domain name or subdomain (e.g., `ai-coder.yourdomain.com`)
 - SSH client installed on your local machine
 - Basic command-line familiarity
 
@@ -28,7 +28,7 @@ Deploy Creative AI-Driven Coding Development to a cloud VPS for 24/7 operation w
 
 ```bash
 # Generate SSH key (ed25519 recommended)
-ssh-keygen -t ed25519 -C "remote-coding-agent"
+ssh-keygen -t ed25519 -C "creative-ai-coding"
 
 # When prompted:
 # - File location: Press Enter (uses default ~/.ssh/id_ed25519)
@@ -202,7 +202,7 @@ Point your domain to your server's IP address.
 
 1. Go to your domain registrar or DNS provider (Cloudflare, Namecheap, etc.)
 2. Create an **A Record**:
-   - **Name:** `remote-agent` (for `remote-agent.yourdomain.com`) or `@` (for `yourdomain.com`)
+   - **Name:** `ai-coder` (for `ai-coder.yourdomain.com`) or `@` (for `yourdomain.com`)
    - **Value:** Your server's public IP address
    - **TTL:** 300 (5 minutes) or default
 
@@ -210,7 +210,7 @@ Point your domain to your server's IP address.
 
 ```
 Type: A
-Name: remote-agent
+Name: ai-coder
 Content: 123.45.67.89
 Proxy: Off (DNS Only)
 TTL: Auto
@@ -224,12 +224,12 @@ TTL: Auto
 
 ```bash
 # Create application directory
-sudo mkdir -p /remote-coding-agent
-sudo chown deploy:deploy /remote-coding-agent
+sudo mkdir -p /opt/creative-ai-coding
+sudo chown deploy:deploy /opt/creative-ai-coding
 
 # Clone repository into the directory
-cd /remote-coding-agent
-git clone https://github.com/LupinnnX/remote-coding-agent.git .
+cd /opt/creative-ai-coding
+git clone https://github.com/LupinnnX/creative-ai-coding.git .
 ```
 
 ---
@@ -502,12 +502,12 @@ nano Caddyfile
 **Update with your domain:**
 
 ```
-remote-agent.yourdomain.com {
+ai-coder.yourdomain.com {
     reverse_proxy app:3000
 }
 ```
 
-Replace `remote-agent.yourdomain.com` with your actual domain.
+Replace `ai-coder.yourdomain.com` with your actual domain.
 
 **Save and exit:** `Ctrl+X`, then `Y`, then `Enter`
 
@@ -562,9 +562,9 @@ docker compose --profile with-db -f docker-compose.yml -f docker-compose.cloud.y
 docker compose -f docker-compose.yml -f docker-compose.cloud.yml logs -f app
 
 # Look for:
-# [App] Starting Remote Coding Agent
+# [App] Starting Creative AI Coding
 # [Database] Connected successfully
-# [App] Remote Coding Agent is ready!
+# [App] Creative AI Coding is ready!
 ```
 
 **Press `Ctrl+C` to exit logs (services keep running).**
@@ -579,21 +579,21 @@ docker compose -f docker-compose.yml -f docker-compose.cloud.yml logs -f app
 
 ```bash
 # Basic health check
-curl https://remote-agent.yourdomain.com/health
+curl https://ai-coder.yourdomain.com/health
 # Expected: {"status":"ok"}
 
 # Database connectivity
-curl https://remote-agent.yourdomain.com/health/db
+curl https://ai-coder.yourdomain.com/health/db
 # Expected: {"status":"ok","database":"connected"}
 
 # Concurrency status
-curl https://remote-agent.yourdomain.com/health/concurrency
+curl https://ai-coder.yourdomain.com/health/concurrency
 # Expected: {"status":"ok","active":0,"queued":0,"maxConcurrent":10}
 ```
 
 ### Check SSL Certificate
 
-Visit `https://remote-agent.yourdomain.com/health` in your browser:
+Visit `https://ai-coder.yourdomain.com/health` in your browser:
 
 - Should show green padlock
 - Certificate issued by "Let's Encrypt"
@@ -633,7 +633,7 @@ openssl rand -hex 32
 
 | Field                | Value                                                                        |
 | -------------------- | ---------------------------------------------------------------------------- |
-| **Payload URL**      | `https://remote-agent.yourdomain.com/webhooks/github`                        |
+| **Payload URL**      | `https://ai-coder.yourdomain.com/webhooks/github`                            |
 | **Content type**     | `application/json`                                                           |
 | **Secret**           | Your `WEBHOOK_SECRET` from `.env`                                            |
 | **SSL verification** | Enable SSL verification                                                      |
@@ -676,7 +676,7 @@ docker compose -f docker-compose.yml -f docker-compose.cloud.yml logs --tail=100
 
 ```bash
 # Pull latest changes
-cd /remote-coding-agent
+cd /opt/creative-ai-coding
 git pull
 
 # Rebuild and restart
@@ -716,7 +716,7 @@ docker compose -f docker-compose.yml -f docker-compose.cloud.yml down -v
 **Check DNS:**
 
 ```bash
-dig remote-agent.yourdomain.com
+dig ai-coder.yourdomain.com
 # Should return your server IP
 ```
 
@@ -803,7 +803,7 @@ cat .env | grep WEBHOOK_SECRET
 **Test webhook endpoint:**
 
 ```bash
-curl https://remote-agent.yourdomain.com/webhooks/github
+curl https://ai-coder.yourdomain.com/webhooks/github
 # Should return 400 (missing signature) - means endpoint is reachable
 ```
 

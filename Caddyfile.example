@@ -1,8 +1,8 @@
-# Caddy configuration for Remote Coding Agent
+# Caddy configuration for Creative AI Coding
 # Copy this file to 'Caddyfile' and update with your domain
 
-# Replace 'remote-agent.yourdomain.com' with your actual domain or subdomain
-remote-agent.yourdomain.com {
+# Replace 'ai-coder.yourdomain.com' with your actual domain or subdomain
+ai-coder.yourdomain.com {
     # Reverse proxy to app container
     reverse_proxy app:3000
 
@@ -19,11 +19,11 @@ remote-agent.yourdomain.com {
 }
 
 # Alternative configuration with multiple domains:
-# remote-agent.yourdomain.com, alternative.domain.com {
+# ai-coder.yourdomain.com, alternative.domain.com {
 #     reverse_proxy app:3000
 # }
 
 # Alternative: HTTP only (for testing, not recommended for production)
-# http://remote-agent.yourdomain.com {
+# http://ai-coder.yourdomain.com {
 #     reverse_proxy app:3000
 # }

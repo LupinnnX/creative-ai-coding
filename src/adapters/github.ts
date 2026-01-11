@@ -193,17 +193,17 @@ export class GitHubAdapter implements IPlatformAdapter {
   }
 
   /**
-   * Check if text contains @remote-agent mention
+   * Check if text contains @ai-coder mention
    */
   private hasMention(text: string): boolean {
-    return /@remote-agent[\s,:;]/.test(text) || text.trim() === '@remote-agent';
+    return /@ai-coder[\s,:;]/.test(text) || text.trim() === '@ai-coder';
   }
 
   /**
-   * Strip @remote-agent mention from text
+   * Strip @ai-coder mention from text
    */
   private stripMention(text: string): string {
-    return text.replace(/@remote-agent[\s,:;]+/g, '').trim();
+    return text.replace(/@ai-coder[\s,:;]+/g, '').trim();
   }
 
   /**

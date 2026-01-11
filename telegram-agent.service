@@ -1,31 +1,54 @@
 [Unit]
-Description=Telegram Agent - Droid + GLM-4.7 + NOVA
+Description=Creative AI-Driven Coding Development - Droid + GLM-4.7 + Telegram + NOVA
+Documentation=https://github.com/LupinnnX/creative-ai-coding
 After=network.target postgresql.service
+Wants=postgresql.service
 
 [Service]
 Type=simple
-User=root
-WorkingDirectory=/root/Telegram-Agent
+User=appuser
+Group=appuser
+WorkingDirectory=/opt/creative-ai-coding
 
-# Environment file
-EnvironmentFile=/root/Telegram-Agent/.env
+# Environment file with secrets
+EnvironmentFile=/opt/creative-ai-coding/.env
 
-# Environment variables for Droid CLI
+# IMPORTANT: Set HOME for Droid CLI to find ~/.factory/config.json
+Environment=HOME=/home/appuser
 Environment=NODE_ENV=production
-Environment=HOME=/root
-Environment=PATH=/root/.local/bin:/usr/local/bin:/usr/bin:/bin
+Environment=PATH=/usr/local/bin:/usr/bin:/bin:/home/appuser/.local/bin
 
-# Start the application
-ExecStart=/usr/bin/node /root/Telegram-Agent/dist/index.js
+# Node.js application
+ExecStart=/usr/bin/node /opt/creative-ai-coding/dist/index.js
 
-# Restart policy
+# Watchdog configuration - auto-restart if app becomes unresponsive
+WatchdogSec=120
+WatchdogSignal=SIGABRT
+
+# Restart policy - comprehensive auto-recovery
 Restart=always
 RestartSec=10
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+# Timeout for graceful shutdown
+TimeoutStopSec=30
 
 # Logging
 StandardOutput=journal
 StandardError=journal
 SyslogIdentifier=telegram-agent
+
+# Security hardening (ProtectHome=false to allow Droid CLI config access)
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=false
+PrivateTmp=true
+ReadWritePaths=/opt/creative-ai-coding/workspace /opt/creative-ai-coding/logs /home/appuser/.factory
+
+# Resource limits
+MemoryMax=2G
+CPUQuota=80%
 
 [Install]
 WantedBy=multi-user.target

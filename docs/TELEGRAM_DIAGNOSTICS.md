@@ -58,10 +58,10 @@ We've added `[DIAG]` tagged logging to these files:
 
 ```bash
 # On your VPS
-cd /opt/remote-agent
+cd /opt/creative-ai-coding
 sudo -u appuser git pull
 sudo -u appuser npm run build
-sudo systemctl restart telegram-agent  # or remote-agent
+sudo systemctl restart telegram-agent
 ```
 
 ### Step 2: Run Diagnostic Script

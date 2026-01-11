@@ -1,13 +1,13 @@
 #!/bin/bash
 # =============================================================================
 # VPS Watchdog Script - External Service Monitor
-# Runs via cron to ensure the remote-agent service stays alive
+# Runs via cron to ensure the telegram-agent service stays alive
 # =============================================================================
 
 set -euo pipefail
 
 # Configuration
-SERVICE_NAME="remote-agent"
+SERVICE_NAME="telegram-agent"
 HEALTH_URL="http://127.0.0.1:${PORT:-3000}/health"
 LOG_FILE="/var/log/vps-watchdog.log"
 MAX_LOG_SIZE=10485760  # 10MB

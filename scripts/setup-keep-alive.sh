@@ -24,7 +24,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Variables
-APP_DIR="${APP_DIR:-/opt/remote-agent}"
+APP_DIR="${APP_DIR:-/opt/creative-ai-coding}"
 WATCHDOG_SCRIPT="$APP_DIR/scripts/vps-watchdog.sh"
 CRON_INTERVAL="${CRON_INTERVAL:-5}"  # minutes
 
@@ -75,7 +75,7 @@ echo -e "${GREEN}Cron job installed (every $CRON_INTERVAL minutes)${NC}"
 echo ""
 echo -e "${CYAN}Step 4: Updating systemd service with watchdog...${NC}"
 
-SERVICE_FILE="/etc/systemd/system/remote-agent.service"
+SERVICE_FILE="/etc/systemd/system/telegram-agent.service"
 
 if [ -f "$SERVICE_FILE" ]; then
   # Backup original
@@ -127,7 +127,7 @@ else
 fi
 
 # Check systemd service
-if systemctl is-enabled remote-agent 2>/dev/null; then
+if systemctl is-enabled telegram-agent 2>/dev/null; then
   echo -e "  ${GREEN}✓${NC} Systemd service enabled"
 else
   echo -e "  ${YELLOW}!${NC} Systemd service not enabled"
@@ -169,8 +169,8 @@ echo -e "           - RestartSec=10"
 echo ""
 echo -e "${YELLOW}To test the system:${NC}"
 echo -e "  1. Check logs: tail -f /var/log/vps-watchdog.log"
-echo -e "  2. Check app logs: journalctl -u remote-agent -f"
-echo -e "  3. Test restart: systemctl restart remote-agent"
+echo -e "  2. Check app logs: journalctl -u telegram-agent -f"
+echo -e "  3. Test restart: systemctl restart telegram-agent"
 echo -e "  4. Check health: curl http://localhost:3000/health/keepalive"
 echo ""
 echo -e "${YELLOW}Environment variables (optional):${NC}"

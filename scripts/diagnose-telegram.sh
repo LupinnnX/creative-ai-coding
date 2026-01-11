@@ -21,12 +21,12 @@ check_fail() { echo -e "${RED}✗ FAIL${NC}: $1"; }
 check_warn() { echo -e "${YELLOW}⚠ WARN${NC}: $1"; }
 
 echo "=== 1. SERVICE STATUS ==="
-if systemctl is-active --quiet telegram-agent 2>/dev/null || systemctl is-active --quiet remote-agent 2>/dev/null; then
+if systemctl is-active --quiet telegram-agent 2>/dev/null; then
     check_pass "Service is running"
-    SERVICE_NAME=$(systemctl is-active --quiet telegram-agent && echo "telegram-agent" || echo "remote-agent")
+    SERVICE_NAME="telegram-agent"
 else
     check_fail "Service is NOT running"
-    echo "  Try: sudo systemctl start telegram-agent (or remote-agent)"
+    echo "  Try: sudo systemctl start telegram-agent"
     SERVICE_NAME="telegram-agent"
 fi
 echo ""
@@ -154,7 +154,7 @@ echo ""
 
 echo "=== 7. ENVIRONMENT CHECK ==="
 # Check .env file
-ENV_FILE="/opt/remote-agent/.env"
+ENV_FILE="/opt/creative-ai-coding/.env"
 if [ -f "$ENV_FILE" ]; then
     check_pass ".env file exists"
     
