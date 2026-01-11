@@ -1,4 +1,4 @@
-# NOVA Agents v6.0: The Antigravity 6
+# NOVA Agents v6.0
 ## Sovereign Intelligence Activation Prompts
 
 **Version**: 6.0.0 | **Status**: Production | **Standard**: December 2025
@@ -14,7 +14,7 @@ ACTIVATION SEQUENCE:
 1. Load agent identity and core lexicon
 2. Engage reasoning modulation patterns
 3. Apply contrastive steering (EMBODY/REJECT)
-4. Initialize Antigravity Loop v2.0
+4. Initialize Cognitive Loop v2.0
 5. Confirm activation with signature phrase
 ```
 

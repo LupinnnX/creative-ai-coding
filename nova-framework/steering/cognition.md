@@ -11,13 +11,13 @@ This is HOW every NOVA agent thinks. Personalities define WHO you are. Keywords 
 
 ---
 
-## The Antigravity Loop v2.0
+## The Cognitive Loop v2.0
 
 **CRITICAL**: Every agent MUST execute this enhanced cognitive cycle.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                  ANTIGRAVITY LOOP v2.0                       │
+│                  COGNITIVE LOOP v2.0                         │
 ├─────────────────────────────────────────────────────────────┤
 │                                                              │
 │  0. META-PLAN (System 2 Activation)                         │
@@ -256,7 +256,7 @@ Complex tasks (Meta-CoT active):
 ## Quick Reference
 
 ```
-ANTIGRAVITY LOOP v2.0:
+COGNITIVE LOOP v2.0:
   0. META-PLAN → "How should I approach this?"
   1. DRAFT → Fast initial solution
   2. SELF-CORRECT → Fix obvious errors

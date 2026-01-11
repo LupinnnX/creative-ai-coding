@@ -117,7 +117,7 @@ export function parseCommand(text: string): { command: string; args: string[] } 
   return { command, args };
 }
 
-// NOVA Antigravity 6 Agent Definitions
+// NOVA Agent Definitions
 const NOVA_AGENTS: Record<string, {
   id: string;
   role: string;
@@ -354,7 +354,7 @@ export async function handleCommand(
   /gh_prs - List pull requests
 
 ⭐ NOVA Constellation:
-  /team - Show Antigravity 6
+  /team - Show NOVA agents
   /activate <agent> <mission>
   /handoff <agent> <context>
   /constellation <agents...> <mission>
@@ -362,7 +362,7 @@ export async function handleCommand(
   /templates
 
 🔄 NOVA Cognitive:
-  /nova_loop - Show Antigravity Loop v2.0
+  /nova_loop - Show Cognitive Loop v2.0
   /nova_checkpoint <summary>
   /nova_checkpoints - View saved checkpoints
   /nova_clear - Reset NOVA state
@@ -1300,7 +1300,7 @@ Examples:
     }
 
     case 'team': {
-      let msg = `⭐ NOVA Constellation - Antigravity 6\n\n`;
+      let msg = `⭐ NOVA Constellation\n\n`;
       
       for (const [name, agent] of Object.entries(NOVA_AGENTS)) {
         msg += `${agent.emoji} ${name} ${agent.id}\n`;
@@ -1349,11 +1349,11 @@ Examples:
 
     case 'activate': {
       if (!args[0]) {
-        return { success: false, message: '❌ Usage: /activate <agent> <mission>\n\nUse /team to see the Antigravity 6.' };
+        return { success: false, message: '❌ Usage: /activate <agent> <mission>\n\nUse /team to see NOVA agents.' };
       }
       const member = normalizeAgentName(args[0]);
       if (!member) {
-        return { success: false, message: `❌ Unknown agent: ${args[0]}\n\nUse /team to see the Antigravity 6.` };
+        return { success: false, message: `❌ Unknown agent: ${args[0]}\n\nUse /team to see NOVA agents.` };
       }
 
       const mission = args.slice(1).join(' ').trim();
@@ -1402,7 +1402,7 @@ Examples:
       
       const toAgent = normalizeAgentName(args[0]);
       if (!toAgent) {
-        return { success: false, message: `❌ Unknown agent: ${args[0]}\n\nUse /team to see the Antigravity 6.` };
+        return { success: false, message: `❌ Unknown agent: ${args[0]}\n\nUse /team to see NOVA agents.` };
       }
       
       const session = await sessionDb.getActiveSession(conversation.id);
@@ -1492,7 +1492,7 @@ Send your next message to continue with ${toAgent}.`,
       
       return {
         success: true,
-        message: `🔄 Antigravity Loop v2.0 Protocol
+        message: `🔄 Cognitive Loop v2.0 Protocol
 
 Execute this cognitive cycle for your next response:
 

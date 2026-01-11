@@ -23,7 +23,7 @@ NOVA (Network of Virtual Agents) is a multi-agent AI coordination system with 6 
 activate VEGA (Research best database for real-time features)
 ```
 
-### 2. The Antigravity 6 Agents
+### 2. The NOVA Agents
 
 | Agent | Role | When to Use |
 |-------|------|-------------|
@@ -97,7 +97,7 @@ Activate multiple agents for complex tasks:
 
 ---
 
-## The Antigravity Loop v2.0
+## The Cognitive Loop v2.0
 
 Every significant task follows this cognitive cycle:
 

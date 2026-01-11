@@ -27,7 +27,7 @@ Sign: ${agent.emoji} ${agent.name} ${agent.id}`;
  * LITE cognitive loop - ~200 tokens (vs ~800 full)
  */
 export function buildCognitiveLoopLite(): string {
-  return `## Antigravity Loop (execute before output)
+  return `## Cognitive Loop (execute before output)
 1. META-PLAN → 2. DRAFT → 3. CRITIQUE → 4. REFINE → 5. VERIFY`;
 }
 
@@ -95,7 +95,7 @@ Mission: ${mission}
 Lexicon: ${agent.lexicon.join(' | ')}
 ${agent.hasVeto ? '⚠️ VETO POWER' : ''}
 
-Execute Antigravity Loop. Sign outputs with ${agent.emoji} ${agent.name} ${agent.id}`;
+Execute Cognitive Loop. Sign outputs with ${agent.emoji} ${agent.name} ${agent.id}`;
 }
 
 /**

@@ -6,7 +6,7 @@
 
 The NOVA Framework (Network of Virtual Agents) is now deeply integrated into the Telegram Agent, providing a multi-agent coordination system with 6 specialized AI agents working in parallel on complex development tasks.
 
-## The Antigravity 6
+## The NOVA Agents
 
 | Agent | ID | Role | Strength | Veto Power |
 |-------|-----|------|----------|------------|
@@ -48,7 +48,7 @@ activate POLARIS and VEGA (Build scalable auth system)
 - `/templates` - Show activation examples
 
 ### Cognitive Protocol
-- `/nova-loop` - Display Antigravity Loop v2.0 protocol
+- `/nova-loop` - Display Cognitive Loop v2.0 protocol
 - `/nova-checkpoint <summary>` - Save reasoning checkpoint
 - `/nova-checkpoints` - View saved checkpoints
 - `/nova-clear` - Reset all NOVA state
@@ -56,7 +56,7 @@ activate POLARIS and VEGA (Build scalable auth system)
 ### Status
 - `/status` - Show current agent, mission, and settings
 
-## Antigravity Loop v2.0
+## Cognitive Loop v2.0
 
 Every significant task follows this enhanced cognitive cycle:
 
@@ -201,7 +201,7 @@ Droid CLI uses a different configuration format. Copy the TOML config to your VP
 Or manually copy `config/droid-mcp.toml` to `~/.droid/config.toml`:
 
 ```toml
-# Sequential Thinking - For Antigravity Loop v2.0
+# Sequential Thinking - For Cognitive Loop v2.0
 [mcp_servers.sequential-thinking]
 command = "npx"
 args = ["-y", "@anthropic/mcp-sequential-thinking"]
@@ -246,7 +246,7 @@ NOVA steering files are loaded from `.nova/steering/`:
 │  │              NOVA STEERING LOADER                    │   │
 │  │  - Loads all .nova/steering/*.md files              │   │
 │  │  - Builds agent-specific context                    │   │
-│  │  - Injects Antigravity Loop v2.0                    │   │
+│  │  - Injects Cognitive Loop v2.0                      │   │
 │  └─────────────────────────────────────────────────────┘   │
 │                           │                                 │
 │                           ▼                                 │

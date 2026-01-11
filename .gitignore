@@ -56,6 +56,12 @@ workspace/
 .kiro/
 .claude/
 .cursor/
+.nova/
+
+# Internal development artifacts
+.agents/plans/
+.agents/reference/
+.agents/PRD.md
 
 # OS
 .DS_Store

@@ -563,7 +563,7 @@ curl https://agent.yourdomain.com/health
 
 ## NOVA Framework v7.0 Integration
 
-### The Antigravity 6
+### The NOVA Agents
 
 | Agent | ID | Role | Activation Keywords |
 |-------|-----|------|---------------------|

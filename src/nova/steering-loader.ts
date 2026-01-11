@@ -75,11 +75,11 @@ export async function loadSteeringFiles(basePath: string): Promise<Record<string
 }
 
 /**
- * Build the Antigravity Loop v2.0 cognitive protocol prompt
+ * Build the Cognitive Loop v2.0 protocol prompt
  */
 export function buildCognitiveLoopPrompt(): string {
   return `
-## Antigravity Loop v2.0 - Cognitive Protocol
+## Cognitive Loop v2.0 - Protocol
 
 Before EVERY significant response, execute this enhanced cognitive cycle:
 
@@ -269,7 +269,7 @@ export async function buildNovaContext(
   const parts: string[] = [];
 
   // Header
-  parts.push('# NOVA Framework v6.0 - Antigravity 6\n');
+  parts.push('# NOVA Framework v6.0\n');
   parts.push(`**Date**: ${new Date().toISOString().split('T')[0]}`);
   
   if (activeAgent) {
@@ -385,7 +385,7 @@ ${keywordSaturation}
 
 **Lexicon**: ${agent.lexicon.join(' | ')}
 
-**Protocol**: Execute Antigravity Loop v2.0 for all significant outputs.
+**Protocol**: Execute Cognitive Loop v2.0 for all significant outputs.
 
 ---
 

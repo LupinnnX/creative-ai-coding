@@ -90,7 +90,7 @@ Each command links to its implementation for agents to enhance functionality.
 ### NOVA Agent Commands
 | Command | Description | Source Files |
 |---------|-------------|--------------|
-| `/team` | Show NOVA Antigravity 6 agents | #[[file:src/handlers/command-handler.ts]], #[[file:src/nova/types.ts]] |
+| `/team` | Show NOVA agents | #[[file:src/handlers/command-handler.ts]], #[[file:src/nova/types.ts]] |
 | `/activate <agent> <mission>` | Activate a NOVA agent | #[[file:src/handlers/command-handler.ts]], #[[file:src/orchestrator/orchestrator.ts]] |
 | `/constellation` | Multi-agent activation | #[[file:src/handlers/command-handler.ts]] |
 | `/handoff <agent>` | Transfer to another agent | #[[file:src/handlers/command-handler.ts]] |

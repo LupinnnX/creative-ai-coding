@@ -2,7 +2,7 @@
  * System Prompt for Droid AI Assistant
  * 
  * Instructs the LLM to follow UX best practices for Telegram output
- * Integrates NOVA Framework v6.0 - Antigravity 6 agents
+ * Integrates NOVA Framework v6.0 agents
  * 
  * January 2026 - Full Autonomy Mode
  */
@@ -134,7 +134,7 @@ Remember: Every response should be GLANCEABLE - users should understand the stat
 
 /**
  * NOVA Agent Full Activation Prompts
- * Based on NOVA Framework v6.0 - Antigravity 6
+ * Based on NOVA Framework v6.0
  */
 const NOVA_AGENTS: Record<string, {
   id: string;

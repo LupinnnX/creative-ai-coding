@@ -1,8 +1,8 @@
 ---
 name: "nova-framework"
 displayName: "NOVA Framework"
-description: "Multi-agent coordination system with 6 sovereign AI agents (POLARIS, VEGA, SIRIUS, RIGEL, ANTARES, ARCTURUS). Features Meta Chain-of-Thought reasoning, the Antigravity Loop v2.0, research-backed activation steering, hierarchical workflow patterns, and cross-agent code consistency."
-keywords: ["nova", "multi-agent", "polaris", "vega", "sirius", "rigel", "antares", "arcturus", "orchestration", "strategy", "research", "design", "frontend", "backend", "security", "testing", "constellation", "antigravity", "meta-cot", "coordination"]
+description: "Multi-agent coordination system with 6 sovereign AI agents (POLARIS, VEGA, SIRIUS, RIGEL, ANTARES, ARCTURUS). Features Meta Chain-of-Thought reasoning, the Cognitive Loop v2.0, research-backed activation steering, hierarchical workflow patterns, and cross-agent code consistency."
+keywords: ["nova", "multi-agent", "polaris", "vega", "sirius", "rigel", "antares", "arcturus", "orchestration", "strategy", "research", "design", "frontend", "backend", "security", "testing", "constellation", "meta-cot", "coordination"]
 author: "NOVA Team"
 version: "6.0.0"
 ---
@@ -19,10 +19,10 @@ NOVA (Network of Virtual Agents) is a world-class multi-agent coordination syste
 
 1. **Activate an agent**: Say "Activate POLARIS" (or any agent name)
 2. **Load steering**: Read the relevant steering file for your workflow
-3. **Follow the Loop**: Every task goes through the Antigravity Loop v2.0
+3. **Follow the Loop**: Every task goes through the Cognitive Loop v2.0
 4. **Hand off properly**: Use structured handoffs between agents
 
-## The Antigravity 6
+## The NOVA Agents
 
 | Agent | ID | Role | Strength | Activation Phrase |
 |-------|-----|------|----------|-------------------|
@@ -35,7 +35,7 @@ NOVA (Network of Virtual Agents) is a world-class multi-agent coordination syste
 
 **Veto Power**: SIRIUS (UI/UX) and ARCTURUS (Security/Quality) can veto releases.
 
-## The Antigravity Loop v2.0
+## The Cognitive Loop v2.0
 
 Every significant task follows this enhanced cognitive cycle:
 
@@ -59,7 +59,7 @@ Load these files based on your current workflow:
 |------|---------|--------------|
 | `agents.md` | Full activation prompts for all 6 agents | When activating an agent |
 | `keywords.md` | 5-level activation hierarchy with semantic fields | Before starting any task |
-| `cognition.md` | Antigravity Loop v2.0 with Meta-CoT reasoning | For complex decisions |
+| `cognition.md` | Cognitive Loop v2.0 with Meta-CoT reasoning | For complex decisions |
 | `coordination.md` | 7 workflow patterns for multi-agent work | Multi-agent coordination |
 | `context.md` | Memory architecture and handoff protocols | Context-critical tasks |
 | `style.md` | Cross-agent code consistency protocols | Before writing code |

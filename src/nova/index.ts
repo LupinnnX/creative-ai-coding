@@ -1,6 +1,6 @@
 /**
  * NOVA Framework v7.0 - Main Export
- * Antigravity 6 Agent Coordination System
+ * Agent Coordination System
  * 
  * Enhanced with Self-Healing Error Debugger v1.0
  * Enhanced with Reflexion Loop v7.0 (Self-Improvement)

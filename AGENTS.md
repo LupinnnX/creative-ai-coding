@@ -4,9 +4,9 @@ This file provides instructions for AI coding agents working on this project.
 
 ## NOVA Framework v6.0 Integration
 
-This project integrates the NOVA multi-agent coordination system (Antigravity 6).
+This project integrates the NOVA multi-agent coordination system.
 
-### The Antigravity 6
+### The NOVA Agents
 
 | Agent | ID | Role | Strength | Triggers |
 |-------|-----|------|----------|----------|

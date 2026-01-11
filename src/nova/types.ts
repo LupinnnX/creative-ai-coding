@@ -1,6 +1,6 @@
 /**
  * NOVA Framework v6.0 Type Definitions
- * Antigravity 6 Agent System
+ * Agent System
  */
 
 export type NovaAgentId = 'POLARIS' | 'VEGA' | 'SIRIUS' | 'RIGEL' | 'ANTARES' | 'ARCTURUS';

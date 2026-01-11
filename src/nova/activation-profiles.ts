@@ -61,7 +61,7 @@ export interface AgentActivationProfile {
 }
 
 // ============================================================================
-// ACTIVATION PROFILES FOR ANTIGRAVITY 6
+// ACTIVATION PROFILES FOR NOVA AGENTS
 // ============================================================================
 
 export const ACTIVATION_PROFILES: Record<NovaAgent, AgentActivationProfile> = {
