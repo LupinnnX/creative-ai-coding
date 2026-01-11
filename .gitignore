@@ -74,6 +74,13 @@ nova-framework/
 # Internal development artifacts (not for public)
 .agents/
 
+# Internal changelogs and notes
+CHANGELOG-*.md
+
+# Development test scripts
+test-db.js
+setup-test-codebase.js
+
 # OS
 .DS_Store
 Thumbs.db
