@@ -3,12 +3,12 @@
 ## Available MCP Servers
 
 ### 1. Sequential Thinking
-**When to use**: Complex reasoning, multi-step problems, Antigravity Loop v2.0
+**When to use**: Complex reasoning, multi-step problems, Cognitive Loop v2.0
 ```
 mcp__sequential-thinking__sequentialthinking
 ```
 - Break down complex problems step-by-step
-- Use for META-PLAN phase of Antigravity Loop
+- Use for META-PLAN phase of Cognitive Loop
 - Track reasoning chains across multiple thoughts
 
 ### 2. Brave Search
@@ -74,7 +74,7 @@ mcp__filesystem__list_directory(path="...")
    - Track project evolution
 
 3. **Sequential Thinking for Complex Tasks**
-   - Use for Antigravity Loop phases
+   - Use for Cognitive Loop phases
    - Break down before implementing
    - Document reasoning chain
 

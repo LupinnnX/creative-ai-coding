@@ -410,8 +410,8 @@ class SelfImprovementLoop {
     };
     
     try {
-      // 1. EXECUTE with Antigravity Loop
-      const result = await this.runAntigravityLoop(task, execution);
+      // 1. EXECUTE with Cognitive Loop
+      const result = await this.runCognitiveLoop(task, execution);
       
       // 2. EVALUATE
       execution.outcome = this.evaluateOutcome(result, task.criteria);
@@ -733,7 +733,7 @@ STORAGE TIERS:
   Files: Steering updates, pattern exports
 
 SELF-IMPROVEMENT LOOP:
-  1. Execute (Antigravity Loop)
+  1. Execute (Cognitive Loop)
   2. Evaluate (success/failure/partial)
   3. Reflect (if failure, generate natural language)
   4. Extract (patterns from success)

@@ -29,7 +29,7 @@ NOVA doesn't just execute tasks—it learns from them. Every success becomes a r
 │                                                              │
 │  ┌─────────────────────────────────────────────────────┐    │
 │  │           1. EXECUTE TASK                            │    │
-│  │  • Run Antigravity Loop                              │    │
+│  │  • Run Cognitive Loop                                │    │
 │  │  • Record all actions and decisions                  │    │
 │  │  • Capture intermediate states                       │    │
 │  │  • Note any deviations from plan                     │    │

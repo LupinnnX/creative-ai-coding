@@ -251,7 +251,7 @@ POLARIS:
 EACH AGENT (in their worktree):
   1. Read assignment from agent JSON
   2. Load task context
-  3. Execute Antigravity Loop
+  3. Execute Cognitive Loop
   4. Update progress in agent JSON
   5. Commit changes to feature branch
   6. Signal completion

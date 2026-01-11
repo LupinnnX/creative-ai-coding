@@ -196,7 +196,7 @@
 
 ### Agent Activation
 ```
-/team                            # Show Antigravity 6
+/team                            # Show NOVA agents
 /activate <agent> <mission>      # Activate agent
 /handoff <agent> <context>       # Handoff to agent
 /constellation <agents> <mission># Multi-agent mode
@@ -206,7 +206,7 @@
 
 ### Cognitive Loop
 ```
-/nova_loop                       # Show Antigravity Loop v2.0
+/nova_loop                       # Show Cognitive Loop v2.0
 /nova_checkpoint <summary>       # Save reasoning checkpoint
 /nova_checkpoints                # View saved checkpoints
 /nova_clear                      # Reset NOVA state

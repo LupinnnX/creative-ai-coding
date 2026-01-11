@@ -429,7 +429,7 @@ INPUT (Task/Feedback)
 ├─────────────────────────────────────────────────────────────┤
 │                                                              │
 │  ┌─────────────────────────────────────────────────────┐    │
-│  │  1. EXECUTE (Antigravity Loop)                       │    │
+│  │  1. EXECUTE (Cognitive Loop)                         │    │
 │  │     • META-PLAN → DRAFT → SELF-CORRECT              │    │
 │  │     • CRITIQUE → REFINE → VERIFY → CHECKPOINT       │    │
 │  │     • Record all decisions and actions               │    │
